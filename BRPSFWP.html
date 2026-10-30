@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101a16">
+
+  <title>Blue Ridge Parkway — Storm's Farewell | Where Nature Speaks</title>
+  <meta name="description" content="Bring the beauty of the Blue Ridge Mountains into your home with Storm's Farewell, a landscape photograph capturing the peaceful moments after a mountain storm.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --background: #101a16;
+      --surface: #19251f;
+      --cream: #f3f0e8;
+      --muted: #b3bdb4;
+      --green: #9caf91;
+      --border: rgba(255,255,255,.12);
+      --page-width: 1450px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 30px;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: var(--background);
+      color: var(--cream);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .topbar {
+      width: 100%;
+      padding: 11px 20px;
+      background: #24372c;
+      color: #e7eee3;
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* HEADER */
+
+    header {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      padding: 20px clamp(18px, 6vw, 100px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .brand {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(18px, 2vw, 25px);
+      white-space: nowrap;
+      letter-spacing: .5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(15px, 3vw, 35px);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    nav a {
+      transition: color .25s ease;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .back-link {
+      color: var(--green);
+    }
+
+    /* MAIN CONTENT */
+
+    main {
+      width: 100%;
+      max-width: var(--page-width);
+      margin: 0 auto;
+      padding: clamp(30px, 5vw, 75px) clamp(18px, 6vw, 90px) 100px;
+    }
+
+    .breadcrumb {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: clamp(25px, 4vw, 45px);
+      letter-spacing: 1px;
+      line-height: 1.8;
+    }
+
+    .breadcrumb a:hover {
+      color: white;
+    }
+
+    /* PRODUCT LAYOUT */
+
+    .product-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+      gap: clamp(35px, 6vw, 85px);
+      align-items: center;
+    }
+
+    .image-wrap {
+      min-width: 0;
+      overflow: hidden;
+      background: #e9e9e6;
+      border-radius: 3px;
+      box-shadow: 0 25px 65px rgba(0,0,0,.35);
+      animation: fadeUp .9s ease both;
+    }
+
+    .image-wrap img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      transition: transform .7s ease;
+    }
+
+    @media (hover: hover) {
+      .image-wrap:hover img {
+        transform: scale(1.025);
+      }
+    }
+
+    .product-info {
+      min-width: 0;
+      animation: fadeUp 1s .15s ease both;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5vw, 70px);
+      font-weight: 500;
+      line-height: 1.08;
+      overflow-wrap: break-word;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-family: "Playfair Display", serif;
+      color: var(--green);
+      font-size: clamp(19px, 2vw, 25px);
+      font-style: italic;
+      margin-bottom: 28px;
+    }
+
+    .description {
+      color: var(--muted);
+      font-size: clamp(13px, 1.1vw, 15px);
+      line-height: 2;
+      margin-bottom: 23px;
+    }
+
+    .description strong {
+      color: var(--cream);
+    }
+
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: var(--border);
+      margin: 28px 0;
+    }
+
+    /* PRODUCT DETAILS */
+
+    .details {
+      display: grid;
+      gap: 13px;
+      margin-bottom: 30px;
+    }
+
+    .detail {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: #dce3da;
+      font-size: 13px;
+    }
+
+    .detail span {
+      flex-shrink: 0;
+      color: var(--green);
+      font-size: 17px;
+      line-height: 1.4;
+    }
+
+    /* ETSY BUTTON */
+
+    .etsy-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      min-height: 58px;
+      padding: 16px 22px;
+      background: var(--green);
+      color: #142017;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-align: center;
+      text-transform: uppercase;
+      border-radius: 3px;
+      transition: background .3s ease, transform .3s ease, box-shadow .3s ease;
+    }
+
+    .etsy-button:hover {
+      background: #c0d0b5;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(156,175,145,.15);
+    }
+
+    .etsy-button:focus-visible {
+      outline: 3px solid white;
+      outline-offset: 4px;
+    }
+
+    .etsy-note {
+      text-align: center;
+      color: #89968c;
+      font-size: 11px;
+      margin-top: 13px;
+    }
+
+    /* STORY SECTION */
+
+    .story {
+      margin-top: clamp(65px, 9vw, 120px);
+      padding: clamp(40px, 7vw, 85px) clamp(20px, 10vw, 150px);
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .story h2 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.25;
+      margin-bottom: 22px;
+    }
+
+    .story p {
+      max-width: 720px;
+      margin: auto;
+      color: var(--muted);
+      font-size: clamp(13px, 1.2vw, 15px);
+      line-height: 2;
+    }
+
+    /* FOOTER */
+
+    footer {
+      width: 100%;
+      border-top: 1px solid var(--border);
+      padding: 35px clamp(18px, 6vw, 90px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer strong {
+      color: var(--cream);
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    footer p {
+      margin-top: 4px;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .credit {
+      color: var(--green);
+    }
+
+    /* ANIMATIONS */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* LARGE TABLETS AND SMALL LAPTOPS */
+
+    @media (max-width: 1050px) {
+      main {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .product-layout {
+        gap: 38px;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+      }
+
+      h1 {
+        font-size: clamp(38px, 5vw, 55px);
+      }
+    }
+
+    /* TABLETS */
+
+    @media (max-width: 800px) {
+      header {
+        padding: 20px 5%;
+      }
+
+      .product-layout {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .image-wrap {
+        width: 100%;
+        max-width: 750px;
+        margin: auto;
+      }
+
+      .product-info {
+        width: 100%;
+        max-width: 750px;
+        margin: auto;
+      }
+
+      h1 {
+        font-size: clamp(42px, 8vw, 62px);
+      }
+
+      .description {
+        font-size: 14px;
+      }
+
+      .story {
+        margin-top: 75px;
+      }
+    }
+
+    /* MOBILE PHONES */
+
+    @media (max-width: 600px) {
+      .topbar {
+        padding: 10px 15px;
+        font-size: 9px;
+        letter-spacing: 1.3px;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 13px;
+        padding: 19px 15px;
+      }
+
+      .brand {
+        font-size: 22px;
+        white-space: normal;
+        text-align: center;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+        gap: 22px;
+        flex-wrap: wrap;
+        font-size: 12px;
+      }
+
+      main {
+        padding: 27px 17px 60px;
+      }
+
+      .breadcrumb {
+        font-size: 9px;
+        margin-bottom: 23px;
+      }
+
+      .product-layout {
+        gap: 32px;
+      }
+
+      .image-wrap {
+        border-radius: 2px;
+      }
+
+      h1 {
+        font-size: clamp(39px, 11vw, 53px);
+      }
+
+      .eyebrow {
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-bottom: 13px;
+      }
+
+      .subtitle {
+        font-size: 20px;
+        margin-bottom: 23px;
+      }
+
+      .description {
+        font-size: 13px;
+        line-height: 1.9;
+      }
+
+      .divider {
+        margin: 23px 0;
+      }
+
+      .details {
+        gap: 12px;
+      }
+
+      .detail {
+        font-size: 12px;
+      }
+
+      .etsy-button {
+        min-height: 55px;
+        font-size: 12px;
+      }
+
+      .story {
+        margin-top: 65px;
+        padding: 42px 22px;
+      }
+
+      .story h2 {
+        font-size: 29px;
+      }
+
+      .story p {
+        font-size: 13px;
+        line-height: 1.9;
+      }
+
+      footer {
+        padding: 30px 20px;
+        flex-direction: column;
+        text-align: center;
+        gap: 18px;
+      }
+    }
+
+    /* SMALL PHONES */
+
+    @media (max-width: 380px) {
+      .brand {
+        font-size: 19px;
+      }
+
+      nav {
+        gap: 14px;
+        font-size: 11px;
+      }
+
+      main {
+        padding-left: 13px;
+        padding-right: 13px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .story {
+        padding: 35px 17px;
+      }
+
+      .story h2 {
+        font-size: 26px;
+      }
+    }
+
+    /* LANDSCAPE PHONE SCREENS */
+
+    @media (max-height: 500px) and (orientation: landscape) {
+      header {
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+
+      main {
+        padding-top: 25px;
+      }
+    }
+
+    /* REDUCED MOTION ACCESSIBILITY */
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    A little piece of nature, wherever you call home.
+  </div>
+
+  <header>
+
+    <a href="https://wherenaturespeaks.com" class="brand">
+      Where Nature Speaks
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="https://wherenaturespeaks.com">
+        Home
+      </a>
+
+      <a href="https://wherenaturespeaks.com" class="back-link">
+        Explore Collection ↗
+      </a>
+    </nav>
+
+  </header>
+
+  <main>
+
+    <div class="breadcrumb">
+      <a href="https://wherenaturespeaks.com">HOME</a>
+      &nbsp; / &nbsp; LANDSCAPE PHOTOGRAPHY
+      &nbsp; / &nbsp; STORM'S FAREWELL
+    </div>
+
+    <section class="product-layout">
+
+      <div class="image-wrap">
+        <img
+          src="il_794xN.8765614587_f9rr.avif"
+          alt="Blue Ridge Parkway mountain landscape after a storm, with a tall evergreen tree beneath a dramatic blue sky."
+        >
+      </div>
+
+      <div class="product-info">
+
+        <div class="eyebrow">The Blue Ridge Collection</div>
+
+        <h1>Storm's<br>Farewell</h1>
+
+        <div class="subtitle">Blue Ridge Parkway</div>
+
+        <p class="description">
+          There is something special about the mountains after a storm.
+          The clouds begin to drift away, the sunlight finds its way
+          through the sky, and the forests seem to come alive again.
+
+          <br><br>
+
+          <strong>Storm's Farewell</strong> captures one of those quiet,
+          unforgettable moments along the Blue Ridge Parkway. A towering
+          evergreen stands against a dramatic sky, overlooking endless
+          layers of green mountain ridges and the last traces of passing
+          clouds.
+
+          <br><br>
+
+          Bring the peaceful beauty of the Blue Ridge Mountains into
+          your home with a photograph that celebrates nature's beauty,
+          resilience, and ever-changing skies.
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="details">
+
+          <div class="detail">
+            <span>✦</span>
+            Inspired by the Blue Ridge Parkway
+          </div>
+
+          <div class="detail">
+            <span>✦</span>
+            Nature and landscape photography
+          </div>
+
+          <div class="detail">
+            <span>✦</span>
+            A beautiful addition to any nature-inspired space
+          </div>
+
+          <div class="detail">
+            <span>✦</span>
+            Available through our Etsy shop
+          </div>
+
+        </div>
+
+        <a
+          class="etsy-button"
+          href="https://www.etsy.com/listing/4560185777"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Buy with Etsy <span>↗</span>
+        </a>
+
+        <div class="etsy-note">
+          Secure checkout and listing details available on Etsy.
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="story">
+
+      <div class="eyebrow">Where Nature Speaks</div>
+
+      <h2>Every storm leaves something beautiful behind.</h2>
+
+      <p>
+        Nature has a way of reminding us to slow down and appreciate
+        the little things. From the changing skies to the endless
+        mountain views, every photograph tells a story worth bringing
+        home. This is one of those moments.
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <div>
+      <strong>Where Nature Speaks</strong>
+      <p>Capturing the beauty of the natural world.</p>
+    </div>
+
+    <div>
+      <a
+        class="credit"
+        href="https://vonvisualdesigns.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Made by Von Visual Designs ↗
+      </a>
+    </div>
+
+  </footer>
+
+</body>
+</html>
