@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101210">
+  <meta name="theme-color" content="#087f9f">
 
   <title>Where Nature Speaks | Nature-Inspired Finds</title>
   <link rel="icon" type="image/png" href="/WNNSLOGO.png">
@@ -37,16 +37,16 @@
 
   <style>
     :root {
-      --bg: #101210;
-      --bg-alt: #151815;
-      --card: #1d211d;
-      --card-hover: #272d26;
-      --green: #a8ba9d;
-      --green-dark: #71876a;
+      --bg: #101b13;
+      --bg-alt: #17251a;
+      --card: #202c20;
+      --card-hover: #2a3928;
+      --green: #b8d0a5;
+      --green-dark: #6f9460;
       --white: #f7f8f3;
       --text: #e5e8df;
       --muted: #a5aca0;
-      --border: #30372f;
+      --border: #354031;
       --radius: 8px;
       --ease: cubic-bezier(.2, .75, .25, 1);
       --content: 1200px;
@@ -104,7 +104,7 @@
 
     ::selection {
       background: var(--green);
-      color: #101210;
+      color: #101b13;
     }
 
     .container {
@@ -122,8 +122,8 @@
       position: relative;
       z-index: 110;
       padding: 9px 15px;
-      background: #090b09;
-      border-bottom: 1px solid #242a23;
+      background: #0b120c;
+      border-bottom: 1px solid #354031;
       color: var(--green);
       text-align: center;
       font-size: 9px;
@@ -288,16 +288,16 @@
 
     .btn-primary {
       background: var(--white);
-      color: #151815;
+      color: #17251a;
     }
 
     .btn-primary:hover {
       background: var(--white);
-      color: #151815;
+      color: #17251a;
     }
 
     .btn-outline {
-      border-color: #66705f;
+      border-color: #7f9d6b;
       background: transparent;
       color: var(--white);
     }
@@ -324,11 +324,14 @@
       min-height: min(690px, 78vw);
       min-height: clamp(510px, 67vw, 690px);
       overflow: hidden;
+      /* Soft blue-to-turquoise-to-green atmosphere inspired by the reference. */
       background:
-        radial-gradient(ellipse at 85% 20%, rgba(112, 138, 99, .22), transparent 35%),
-        radial-gradient(ellipse at 20% 100%, rgba(63, 82, 58, .2), transparent 42%),
-        linear-gradient(115deg, #101310, #1b211a 58%, #111411);
-      border-bottom: 1px solid #293028;
+        radial-gradient(ellipse at 50% 18%, rgba(0, 196, 232, .78) 0%, rgba(0, 166, 211, .42) 28%, transparent 58%),
+        radial-gradient(ellipse at 12% 42%, rgba(0, 142, 199, .72) 0%, transparent 48%),
+        radial-gradient(ellipse at 83% 40%, rgba(0, 188, 205, .62) 0%, transparent 46%),
+        radial-gradient(ellipse at 52% 91%, rgba(94, 190, 103, .88) 0%, rgba(43, 132, 75, .58) 39%, transparent 70%),
+        linear-gradient(180deg, #087ca7 0%, #087f9f 38%, #277b61 70%, #183f2c 100%);
+      border-bottom: 1px solid rgba(112, 221, 215, .28);
     }
 
     .hero::before,
@@ -336,39 +339,40 @@
       content: "";
       position: absolute;
       z-index: -1;
-      border: 1px solid rgba(168, 186, 157, .15);
+      inset: -18%;
       border-radius: 50%;
       pointer-events: none;
+      filter: blur(55px);
+      animation: glow 12s ease-in-out infinite alternate;
     }
 
     .hero::before {
-      width: clamp(360px, 55vw, 720px);
-      aspect-ratio: 1;
-      right: -13%;
-      top: -48%;
-      animation: orbit 30s linear infinite;
+      background:
+        radial-gradient(ellipse at 28% 34%, rgba(0, 174, 255, .35), transparent 44%),
+        radial-gradient(ellipse at 76% 74%, rgba(77, 222, 154, .24), transparent 42%);
     }
 
     .hero::after {
-      width: clamp(260px, 38vw, 500px);
-      aspect-ratio: 1;
-      right: -4%;
-      top: -29%;
-      border-color: rgba(168, 186, 157, .1);
-      animation: orbit 23s linear infinite reverse;
+      inset: 0;
+      border-radius: 0;
+      filter: blur(32px);
+      background:
+        linear-gradient(180deg, rgba(4, 28, 57, .2), transparent 28%, transparent 66%, rgba(7, 31, 28, .36)),
+        radial-gradient(ellipse at 50% 48%, transparent 24%, rgba(4, 37, 51, .14) 100%);
+      animation: none;
     }
 
     .hero-glow {
       position: absolute;
       z-index: -1;
-      top: 20%;
-      right: 8%;
-      width: 200px;
-      height: 200px;
-      background: rgba(130, 155, 117, .09);
+      top: 12%;
+      left: 24%;
+      width: 52%;
+      height: 48%;
+      background: rgba(32, 213, 236, .2);
       border-radius: 50%;
-      filter: blur(70px);
-      animation: glow 7s ease-in-out infinite alternate;
+      filter: blur(85px);
+      animation: glow 8s ease-in-out infinite alternate;
       pointer-events: none;
     }
 
@@ -430,7 +434,7 @@
 
     .hero-note {
       margin-top: 36px;
-      color: #aeb7a7;
+      color: #a5aca0;
       font-size: 9px;
       letter-spacing: 1.8px;
       text-transform: uppercase;
@@ -446,7 +450,7 @@
 
     .intro-strip {
       padding-block: 23px;
-      background: #171b16;
+      background: #202c20;
       border-bottom: 1px solid var(--border);
     }
 
@@ -458,7 +462,7 @@
     }
 
     .intro-inner p {
-      color: #e2e7dc;
+      color: #e5e8df;
       font-family: "Playfair Display", serif;
       font-size: 18px;
     }
@@ -507,8 +511,8 @@
     }
 
     .featured-section {
-      background: #141714;
-      border-bottom: 1px solid #272d26;
+      background: #17251a;
+      border-bottom: 1px solid #354031;
     }
 
     /* PRODUCTS */
@@ -532,8 +536,8 @@
       aspect-ratio: 4 / 4.6;
       margin-bottom: 15px;
       overflow: hidden;
-      border: 1px solid #2b312a;
-      background: #20251f;
+      border: 1px solid #3b4a35;
+      background: #263627;
     }
 
     .product-image img {
@@ -559,7 +563,7 @@
       justify-content: center;
       background:
         radial-gradient(ellipse at 50% 32%, #343d31, transparent 65%),
-        linear-gradient(145deg, #262c25, #181c18);
+        linear-gradient(145deg, #263627, #17251a);
       color: #91a186;
       transition: background .4s ease;
     }
@@ -578,7 +582,7 @@
     .product-card:hover .placeholder-image {
       background:
         radial-gradient(ellipse at 50% 32%, #414d3b, transparent 70%),
-        linear-gradient(145deg, #2b3329, #1a1f19);
+        linear-gradient(145deg, #2a3928, #17251a);
     }
 
     .product-tag {
@@ -588,7 +592,7 @@
       max-width: calc(100% - 24px);
       padding: 6px 9px;
       background: #e8ede3;
-      color: #171b16;
+      color: #202c20;
       font-size: 8px;
       font-weight: 700;
       letter-spacing: .7px;
@@ -617,7 +621,7 @@
     }
 
     .product-category {
-      color: #a4ad9d;
+      color: #a5aca0;
       font-size: 9px;
       letter-spacing: .8px;
       text-transform: uppercase;
@@ -653,7 +657,7 @@
 
     .collection-banner {
       padding-bottom: clamp(60px, 8vw, 100px);
-      background: #141714;
+      background: #17251a;
     }
 
     .banner-inner {
@@ -661,10 +665,10 @@
       isolation: isolate;
       overflow: hidden;
       padding: clamp(42px, 7vw, 76px) 24px;
-      border: 1px solid #354031;
+      border: 1px solid #465b3d;
       background:
         radial-gradient(ellipse at 50% 0%, rgba(112, 132, 106, .2), transparent 58%),
-        #191e18;
+        #202c20;
       text-align: center;
     }
 
@@ -698,7 +702,7 @@
     .banner-inner p {
       max-width: 510px;
       margin: 0 auto 27px;
-      color: #b6beb0;
+      color: #b9c0b4;
       font-size: 13px;
       line-height: 2;
     }
@@ -706,7 +710,7 @@
     /* OUR STORY */
 
     .story-section {
-      border-top: 1px solid #272d26;
+      border-top: 1px solid #354031;
       background: var(--bg);
     }
 
@@ -736,8 +740,8 @@
 
     .footer {
       padding-top: 60px;
-      background: #090b09;
-      border-top: 1px solid #2b3129;
+      background: #0b120c;
+      border-top: 1px solid #3b4a35;
     }
 
     .footer-main {
@@ -774,7 +778,7 @@
 
     .footer-description {
       max-width: 320px;
-      color: #a5ada0;
+      color: #a5aca0;
       font-size: 12px;
       line-height: 2;
     }
@@ -813,7 +817,7 @@
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 18px;
-      border-top: 1px solid #292f27;
+      border-top: 1px solid #3b4a35;
     }
 
     .copyright {
@@ -822,7 +826,7 @@
     }
 
     .credit {
-      color: #b8c0b3;
+      color: #b9c0b4;
       font-size: 11px;
     }
 
@@ -1001,7 +1005,7 @@
         display: flex;
         align-items: center;
         padding: 12px 3px;
-        border-bottom: 1px solid #2a3028;
+        border-bottom: 1px solid #3b4a35;
         font-size: 13px;
       }
 
