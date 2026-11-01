@@ -1,0 +1,446 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101a16">
+  <meta name="description" content="In The Azalea Garden — a reusable all-over print tote bag featuring bright red azaleas at the NC Arboretum in Asheville.">
+  <title>In The Azalea Garden | Where Nature Speaks</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --background: #101a16;
+      --panel: #19251f;
+      --cream: #f3f0e7;
+      --muted: #b8c1b8;
+      --sage: #a8b99e;
+      --line: rgba(243, 240, 231, 0.13);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header {
+      width: 100%;
+      padding: 25px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      gap: 20px;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 23px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
+    .header-link {
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.25s ease;
+    }
+
+    .header-link:hover,
+    .breadcrumb a:hover {
+      color: var(--sage);
+    }
+
+    .page {
+      max-width: 1250px;
+      margin: auto;
+      padding: 42px 7% 100px;
+    }
+
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 35px;
+    }
+
+    .breadcrumb span {
+      margin: 0 10px;
+      color: #718075;
+    }
+
+    .product {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 75px;
+      align-items: start;
+    }
+
+    .product-image-wrap {
+      background: var(--panel);
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-image {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+      transition: transform 0.7s ease;
+    }
+
+    .product-image-wrap:hover .product-image {
+      transform: scale(1.025);
+    }
+
+    .product-info {
+      padding-top: 12px;
+    }
+
+    .eyebrow {
+      color: var(--sage);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: 1.12;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: var(--sage);
+      font-family: 'Playfair Display', serif;
+      font-size: 23px;
+      margin-bottom: 27px;
+    }
+
+    .description {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.9;
+      margin-bottom: 24px;
+    }
+
+    .details {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 22px 0;
+      margin: 27px 0 30px;
+    }
+
+    .details-title {
+      color: var(--cream);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .details p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    .etsy-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--sage);
+      color: #142019;
+      padding: 16px 29px;
+      border-radius: 2px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      transition: all 0.25s ease;
+    }
+
+    .etsy-button:hover {
+      background: var(--cream);
+      transform: translateY(-3px);
+    }
+
+    .etsy-note {
+      color: #8f9c91;
+      font-size: 12px;
+      margin-top: 15px;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 35px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .footer-tagline {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .credit {
+      color: var(--muted);
+      font-size: 12px;
+      transition: color 0.2s ease;
+    }
+
+    .credit:hover {
+      color: var(--sage);
+    }
+
+    @media (max-width: 1050px) {
+      .product {
+        gap: 45px;
+      }
+
+      .page {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .product {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        max-width: 650px;
+        margin: auto;
+      }
+
+      .product-info {
+        padding-top: 0;
+      }
+
+      .page {
+        padding-top: 30px;
+      }
+
+      h1 {
+        font-size: 46px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .site-header {
+        padding: 19px 5%;
+      }
+
+      .brand {
+        font-size: 19px;
+      }
+
+      .header-link {
+        font-size: 11px;
+        letter-spacing: 1px;
+      }
+
+      .page {
+        padding: 25px 5% 65px;
+      }
+
+      .breadcrumb {
+        margin-bottom: 23px;
+      }
+
+      h1 {
+        font-size: 39px;
+      }
+
+      .subtitle {
+        font-size: 20px;
+      }
+
+      .description {
+        font-size: 14px;
+      }
+
+      .etsy-button {
+        width: 100%;
+        padding: 16px 20px;
+      }
+
+      .site-footer {
+        padding: 28px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .brand {
+        font-size: 17px;
+      }
+
+      .header-link {
+        font-size: 10px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .page {
+        padding-left: 4%;
+        padding-right: 4%;
+      }
+    }
+
+    @media (orientation: landscape) and (max-height: 500px) {
+      .page {
+        padding-top: 20px;
+        padding-bottom: 45px;
+      }
+
+      .product {
+        gap: 30px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <a class="brand" href="https://wherenaturespeaks.com">
+      Where Nature Speaks
+    </a>
+
+    <a class="header-link" href="https://wherenaturespeaks.com">
+      Home
+    </a>
+  </header>
+
+  <main class="page">
+
+    <div class="breadcrumb">
+      <a href="https://wherenaturespeaks.com">Home</a>
+      <span>/</span>
+      <a href="https://wherenaturespeaks.com">Collection</a>
+      <span>/</span>
+      In The Azalea Garden
+    </div>
+
+    <section class="product">
+
+      <div class="product-image-wrap">
+        <img
+          class="product-image"
+          src="il_794xN.8717797542_qlmv.webp"
+          alt="Bright red azaleas in bloom at the North Carolina Arboretum in Asheville"
+        >
+      </div>
+
+      <div class="product-info">
+
+        <p class="eyebrow">Where Nature Speaks Collection</p>
+
+        <h1>In The Azalea Garden</h1>
+
+        <p class="subtitle">All-Over Print Reusable Lined Tote Bag</p>
+
+        <p class="description">
+          Bright red azaleas caught mid-bloom on a rainy morning at the NC
+          Arboretum in Asheville; their petals still beaded with rain against
+          a backdrop of deep green leaves.
+        </p>
+
+        <div class="details">
+          <p class="details-title">Product Details</p>
+          <p>• Reusable all-over print tote bag</p>
+          <p>• 100% polyester</p>
+          <p>• Also available as a placemat set</p>
+        </div>
+
+        <a
+          class="etsy-button"
+          href="https://www.etsy.com/listing/4556994107"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Buy with Etsy <span>↗</span>
+        </a>
+
+        <p class="etsy-note">
+          Secure checkout and ordering through Etsy.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+
+    <div>
+      <p class="footer-brand">Where Nature Speaks</p>
+      <p class="footer-tagline">Capturing the beauty of the natural world.</p>
+    </div>
+
+    <a
+      class="credit"
+      href="https://vonvisualdesigns.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Made by Von Visual Designs ↗
+    </a>
+
+  </footer>
+
+</body>
+</html>
